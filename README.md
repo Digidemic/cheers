@@ -107,7 +107,7 @@ To clear all pending messages from queue, call `Cheers.clearQueue()` any time.
 ## Installation
 
 ### Install with AAR and gradle (Local)
-1) Download [cheers.aar](cheers.aar).
+1) Download the latest [cheers.aar](cheers.aar).
 2) Move `cheers.aar` to your project's `libs` directory (Example: `YourProject/app/libs/`).
 3) In your `build.gradle`, add <b>only one</b> of the following to your `dependencies { }`:
 - ```groovy
