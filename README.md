@@ -10,7 +10,10 @@
 - Short, familiar, and simple syntax. Only a single call to learn and Cheers automatically queues and shows messages.
 - No setup code required before using Cheers. Just call `Cheers()` and it handles the rest!
 - Optional configuration to display Cheers only while debugging. Or instead, define individual messages intended only for debug builds (dedicate Cheers as a debugging tool entirely if you wish!).
-<br><br>
+
+### Check out the [example app for Cheers](/example-cheers/)!
+
+<br>
 
 ## Table of Contents
 - [Examples](#examples)
@@ -106,24 +109,33 @@ To clear all pending messages from queue, call `Cheers.clearQueue()` any time.
 
 ## Installation
 
-### Install with AAR and gradle (Local)
-1) Download the latest [cheers.aar](cheers.aar).
-2) Move `cheers.aar` to your project's `libs` directory (Example: `YourProject/app/libs/`).
-3) In your `build.gradle`, add <b>only one</b> of the following to your `dependencies { }`:
+### Install with JitPack
+[![](https://jitpack.io/v/Digidemic/cheers.svg)](https://jitpack.io/#Digidemic/cheers)
+1) Add JitPack to your project's root `build.gradle` at the end of `repositories`:
 - ```groovy
-  // adds only cheers.aar
-  implementation fileTree(dir: "libs", include: ["cheers.aar"])
-  
-  // OR
-
-  // adds all .aar files in your libs directory.
-  implementation fileTree(dir: "libs", include: ["*.aar"]) 
+  dependencyResolutionManagement {
+      repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+      repositories {
+          mavenCentral()
+          maven { url 'https://jitpack.io' }
+    }
+  }
   ```
-4) [Sync gradle](https://www.delasign.com/blog/how-to-sync-an-android-project-with-its-gradle-files-in-android-studio/) successfully.
-5) Done! Your Android project is now ready to use Cheers. Go to [Examples](#examples) or [Syntax](#syntax) for Cheers usage!
+2) In the `build.gradle` of the module(s) you wish to use Cheers with, add the following to `dependencies`:
+- ```groovy
+  dependencies {
+      // Required: Installs the .aar without any documentation.
+      implementation 'com.github.digidemic:cheers:1.1.0'
+      
+      // Optional: Displays documentation while writing coding. 
+      implementation 'com.github.digidemic:cheers:1.1.0:javadoc'
 
-### Install with gradle (Remote)
->Coming soon!
+      // Optional: Displays documentation (more comprehensive than javadoc in some cases) and uncompiled code when stepping into library.
+      implementation 'com.github.digidemic:cheers:1.1.0:sources'
+  }
+  ```
+3) [Sync gradle](https://www.delasign.com/blog/how-to-sync-an-android-project-with-its-gradle-files-in-android-studio/) successfully.
+4) Done! Your Android project is now ready to use Cheers. Go to [Examples](#examples) or [Syntax](#syntax) for Cheers usage!
 
 <br>
 
@@ -138,7 +150,7 @@ To clear all pending messages from queue, call `Cheers.clearQueue()` any time.
 ## License
 Cheers created by Adam Steinberg of DIGIDEMIC, LLC
 ```
-Copyright 2023 DIGIDEMIC, LLC
+Copyright 2024 DIGIDEMIC, LLC
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
