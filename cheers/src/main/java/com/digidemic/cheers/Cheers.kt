@@ -1,12 +1,12 @@
 /**
- * Cheers v1.0.0 - https://github.com/Digidemic/Cheers
- * (c) 2023 DIGIDEMIC, LLC - All Rights Reserved
+ * Cheers v1.1.0 - https://github.com/Digidemic/cheers
+ * (c) 2024 DIGIDEMIC, LLC - All Rights Reserved
  * Cheers developed by Adam Steinberg of DIGIDEMIC, LLC
  * License: Apache License 2.0
  *
  * ====
  *
- * Copyright 2023 DIGIDEMIC, LLC
+ * Copyright 2024 DIGIDEMIC, LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ package com.digidemic.cheers
 import android.app.Activity
 import android.content.pm.ApplicationInfo
 import android.widget.Toast
+import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -44,6 +45,7 @@ import kotlinx.coroutines.launch
  * @param duration optional, defaults to [Cheers.LENGTH_SHORT] if undefined. How long the Toast displays for. Can be either [Cheers.LENGTH_SHORT] or [Cheers.LENGTH_LONG].
  * @param onlyShowIfDebugging optional, defaults to null if undefined. If true, Toast will only queue or show if running in debug. If false, Toast will always queue or show. If null (or undefined) will observe [GlobalConfig.onlyShowIfDebuggingAndNullConstructorParam] which by default is set to false (Toast will always queue or show), if true will only queue or show Toast if debugging.
  */
+@OptIn(DelicateCoroutinesApi::class)
 class Cheers(
     private val activity: Activity,
     message: Any,

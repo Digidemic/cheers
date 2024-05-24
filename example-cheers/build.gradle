@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    id 'com.android.application' version '8.0.2'
+    id 'org.jetbrains.kotlin.android' version '1.7.20'
 }
 
 android {
@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId "com.digidemic.cheers"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
